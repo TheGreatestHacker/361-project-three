@@ -1,52 +1,107 @@
 
-{
-  # Stolley House Config, v. 1.2.0, 20181009
+/* stylelint-disable*/
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}html{line-height:1}body{line-height:inherit}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+/* stylelint-enable */
 
-  "rules": {
-    "at-rule-name-case": "lower",
-    "at-rule-name-space-after": "always",
-    "at-rule-semicolon-newline-after": "always",
-    "block-closing-brace-newline-before": "always-multi-line",
-    "block-closing-brace-space-before": "always-single-line",
-    "block-no-empty": true,
-    "block-opening-brace-newline-after": "always-multi-line",
-    "block-opening-brace-space-after": "always-single-line",
-    "block-opening-brace-space-before": "always",
-    "declaration-block-no-duplicate-properties": true,
-    "declaration-block-semicolon-newline-after": "always-multi-line",
-    "declaration-block-semicolon-space-after": "always-single-line",
-    "declaration-block-single-line-max-declarations": 1,
-    "declaration-block-trailing-semicolon": "always",
-    "declaration-colon-space-after": "always",
-    "declaration-colon-space-before": "never",
-    "declaration-no-important": true,
-    "font-family-name-quotes": "always-where-recommended",
-    "indentation": 2,
-    "length-zero-no-unit": true,
-    "media-feature-colon-space-after": "always",
-    "media-feature-colon-space-before": "never",
-    "media-feature-name-case": "lower",
-    "no-descending-specificity": [true, {"severity": "warning"}],
-    "no-duplicate-selectors": true,
-    "no-eol-whitespace": true,
-    "no-invalid-double-slash-comments": true,
-    "no-missing-end-of-source-newline": true,
-    "number-leading-zero": "always",
-    "number-no-trailing-zeros": true,
-    "property-case": "lower",
-    "selector-attribute-brackets-space-inside": "never",
-    "selector-attribute-quotes": "always",
-    "selector-combinator-space-after": "always",
-    "selector-combinator-space-before": "always",
-    "selector-list-comma-newline-after": "always-multi-line",
-    "selector-list-comma-space-after": "always-single-line",
-    "selector-pseudo-class-case": "lower",
-    "selector-type-case": "lower",
-    "string-quotes": "double",
-    "unit-blacklist": [["px", "pt", "in", "cm", "mm"], {"ignoreProperties": {"px": ["/^border/"]}, "ignoreMediaFeatureNames": { "px": ["min-width"]}}],
-    "unit-case": "lower",
-    "unit-no-unknown": true,
-    "value-keyword-case": "lower",
-    "value-list-comma-space-after": "always"
-  }
+/* Begin site styles below */
+
+/*
+1em=18px
+1 lead = 22px;
+Modular scale (perfect fifth: https://www.modularscale.com/?18&px&1.5)
+*/
+
+html {
+  font-size: 1.125em; /*(text size/standard size)18px / 16px = 1.125em*/
+  line-height: 1.222em; /*(ling heigh chosen/pixel size chosen) 22px / 18px=1.222em*/
+  background-image: url(grid.png);
+  padding: 1.222em 0;  /*top_&_bottom right_&_left*/
+}
+
+body{
+  background-color: #FBFBFB;
+}
+
+h1,h2,h3,h4,h5,h6,p,footer{
+  text-align: center;
+}
+
+h1{
+  font-size: 40.5px; /*(18*1.5*1.5)/16*/
+  line-height: 44px; /*22*2*/
+  padding: 22px 0 0 0;
+  background-color: #CCEFC9;
+}
+
+h2{
+  font-size: 27px;/*(18*1.5)/16*/
+  line-height: 44px;
+}
+
+p{
+  text-indent: 1em;
+  padding: 1.222 0 0 0; /* top right bottom left*/
+}
+
+p.intro, address>p{
+  text-indent: 0em;
+  padding: 0 0 0 0;
+}
+
+ul{
+  list-style: circle;
+  padding: 0 0 0 1.222em;
+  text-align: center;
+}
+
+
+/*---------navigation bar-------*/
+body {margin:0}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0.625em 16px; /*top_&_bottom right_&_left*/
+    text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+/*---------End navigation bar code-------*/
+
+footer{
+  font-size: .8em;
+  padding: 1.533em 0 0 0; /*figured out this padding via trial and error, better way?*/
+}
+
+/*responsive media */
+.videoInsert{
+  text-align: center;
+}
+
+video{
+  max-width: 26.477em;
+  height: 15.611em;
+  display: inline-block;
 }
