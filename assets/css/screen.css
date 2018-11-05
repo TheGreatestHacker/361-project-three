@@ -14,23 +14,25 @@ Modular scale (perfect fifth: https://www.modularscale.com/?18&px&1.5)
 html {
   font-size: 1.125em; /*(text size/standard size)18px / 16px = 1.125em*/
   line-height: 1.222em; /*(ling heigh chosen/pixel size chosen) 22px / 18px=1.222em*/
-  /*background-image: url(grid.png);*/
+  background-image: url(grid.png);
   padding: 1.222em 0;  /*top_&_bottom right_&_left*/
 }
 
 body{
-  background-color: #FBFBFB;
+  /*background-color: #FBFBFB;*/
 }
 
-h1,h2,h3,h4,h5,h6,p,footer{
+h2,h3,h4,h5,h6,footer{
   text-align: center;
+  padding: 0 1em 0 1em; /*top right bottom left */
 }
 
-h1{
-  font-size: 40.5px; /*(18*1.5*1.5)/16*/
-  line-height: 44px; /*22*2*/
-  padding: 22px 0 0 0;
-  background-color: #CCEFC9;
+h1 {
+  text-align: center;
+  padding: 0em 1em 0 1em; /*top right bottom left*/
+  font-size: 1.688em;
+  line-height: 2.444em;
+  /*background-color: #CCEFC9;*/
 }
 
 h2{
@@ -40,22 +42,36 @@ h2{
 
 p{
   text-indent: 1em;
-  padding: 1.222 0 0 0; /* top right bottom left*/
+  padding: 1.222em 1em 0 1em; /* top right bottom left*/
 }
 
 p.intro, address>p{
   text-indent: 0em;
-  padding: 0 0 0 0;
+  padding: 0 1em 0 1em;
 }
 
-ul{
+address{
+  padding: 0 0 1.222em 0; /*top right bottom left */
+}
+
+ul {
   list-style: circle;
   padding: 0 0 0 1.222em;
-  text-align: center;
+  text-align: left;
+  margin: 0 0 0 30%;
 }
+
+ol {
+  list-style: lower-roman;
+  padding: 0 0 0 1.222em;
+  text-align: left;
+  margin: 0 0 0 30%;
+}
+
 
 
 /*---------navigation bar-------*/
+
 body {margin:0}
 
 nav ul {
@@ -77,7 +93,7 @@ nav li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 0.625em 16px; /*top_&_bottom right_&_left*/
+    padding: 0.625em 1em; /*top_&_bottom right_&_left*/
     text-decoration: none;
 }
 
@@ -88,6 +104,7 @@ nav li a:hover:not(.active) {
 .active {
     background-color: #4CAF50;
 }
+
 /*---------End navigation bar code-------*/
 
 footer{
@@ -96,12 +113,27 @@ footer{
 }
 
 /*responsive media */
+/*center videos and set base videos to 50% of original*/
+/*aspect ratio of all videos is 640*484*/
 .videoInsert{
   text-align: center;
 }
 
 video{
-  max-width: 26.477em;
-  height: 15.611em;
   display: inline-block;
+  padding: 0 1em;
+  margin-bottom: 1.222em;
+}
+
+@media (max-width: 672px) {
+  video {
+    max-width: 21.184em; /*640*.50%/18*/
+    height: 15.888em; /*484*.50%/18*/
+    display: inline-block;
+    padding: 0 1em;
+    margin-bottom: 1.222em;
+  }
+
+
+
 }
