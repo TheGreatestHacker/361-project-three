@@ -15,44 +15,43 @@ html {
   font-size: 1.125em; /*(text size/standard size)18px / 16px = 1.125em*/
   line-height: 1.222em; /*(ling heigh chosen/pixel size chosen) 22px / 18px=1.222em*/
   background-image: url(grid.png);
-  padding: 1.222em 0;  /*top_&_bottom right_&_left*/
+  padding: 2.444em 0 1.222em 0;  /*top_&_bottom right_&_left*/
 }
 
-body{
-  /*background-color: #FBFBFB;*/
+body {
+  background-color: #FBFBFB;
+  background-image: url(grid.png);
 }
 
-h2,h3,h4,h5,h6,footer{
+h2,h3,h4,h5,h6,address,footer{
   text-align: center;
   padding: 0 1em 0 1em; /*top right bottom left */
 }
 
 h1 {
   text-align: center;
-  padding: 0em 1em 0 1em; /*top right bottom left*/
-  font-size: 1.688em;
-  line-height: 2.444em;
-  /*background-color: #CCEFC9;*/
+  padding: 0 1em 0 1em; /*top right bottom left*/
+  font-size: 2.25em; /* 40.5px / 18 = 2.25em */
+  line-height: 1.0864197531em; /* 44px / 40.5 = 1.0864197531em */
+  background-color: #CCEFC9;
 }
 
 h2{
-  font-size: 27px;/*(18*1.5)/16*/
-  line-height: 44px;
+  font-size: 1.5em;/* 27px/18 = 1.5em*/
+  line-height: 1.222em; /* 33 / 27 = 1.222em */
+  padding: 1.222em 0 0.4074074074em 0;
 }
 
 p{
   text-indent: 1em;
-  padding: 1.222em 1em 0 1em; /* top right bottom left*/
+  padding: 0em 1em 0 1em; /* top right bottom left*/
 }
 
-p.intro, address>p{
+p.intro, address>p, p.arguments{
   text-indent: 0em;
   padding: 0 1em 0 1em;
 }
 
-address{
-  padding: 0 0 1.222em 0; /*top right bottom left */
-}
 
 ul {
   list-style: circle;
@@ -67,6 +66,7 @@ ol {
   text-align: left;
   margin: 0 0 0 30%;
 }
+
 
 
 
@@ -112,28 +112,18 @@ footer{
   padding: 1.533em 0 0 0; /*figured out this padding via trial and error, better way?*/
 }
 
-/*responsive media */
+/*responsive media styles */
 /*center videos and set base videos to 50% of original*/
 /*aspect ratio of all videos is 640*484*/
-.videoInsert{
-  text-align: center;
+
+
+.video{
+  padding: 0 1em 0 1em;
+  display: flex;
+  justify-content: center;
 }
 
-video{
-  display: inline-block;
-  padding: 0 1em;
-  margin-bottom: 1.222em;
-}
-
-@media (max-width: 672px) {
-  video {
-    max-width: 21.184em; /*640*.50%/18*/
-    height: 15.888em; /*484*.50%/18*/
-    display: inline-block;
-    padding: 0 1em;
-    margin-bottom: 1.222em;
-  }
-
-
-
+audio,video{
+  display: block;
+  max-width: 100%;
 }
