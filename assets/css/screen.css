@@ -12,15 +12,12 @@ Modular scale (perfect fifth: https://www.modularscale.com/?18&px&1.5)
 */
 
 html {
+  font-family: Georgia, serif;
   font-size: 1.125em; /*(text size/standard size)18px / 16px = 1.125em*/
   line-height: 1.222em; /*(ling heigh chosen/pixel size chosen) 22px / 18px=1.222em*/
-  background-image: url(grid.png);
-  padding: 2.444em 0 1.222em 0;  /*top_&_bottom right_&_left*/
-}
-
-body {
+  /*background-image: url(grid.png);*/
   background-color: #FBFBFB;
-  background-image: url(grid.png);
+  padding: 2.444em 0 1.222em 0;  /*top_&_bottom right_&_left*/
 }
 
 h2,h3,h4,h5,h6,address,footer{
@@ -57,14 +54,29 @@ ul {
   list-style: circle;
   padding: 0 0 0 1.222em;
   text-align: left;
-  margin: 0 0 0 30%;
+  margin: 0 1em 0 1em;
 }
 
 ol {
   list-style: lower-roman;
   padding: 0 0 0 1.222em;
   text-align: left;
-  margin: 0 0 0 30%;
+  margin: 0 1em 0 1.5em;
+}
+
+figure {
+     position: relative;
+}
+
+figure img {
+    display: block;
+}
+
+figcaption {
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    position: absolute;
+    padding: 0 1em 0 1em;
 }
 
 
@@ -126,4 +138,12 @@ footer{
 audio,video{
   display: block;
   max-width: 100%;
+}
+
+/* if the browser is 600 px or smaller then execute*/
+@media screen and (min-width: 550px) {
+   html{
+     font-size: 1.688em;
+     line-height: 44px;
+   }
 }
