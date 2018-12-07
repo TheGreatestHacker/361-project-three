@@ -17,7 +17,7 @@ Modular scale (perfect fifth: https://www.modularscale.com/?18&px&1.5)
   box-sizing: border-box;
 }
 
-/* Base Styles */
+/* ====== Base Styles ========*/
 html {
   margin: 2.5em; /* 40px /16px */
   font-size: 1.125em; /*(text size/standard size)18px / 16px = 1.125em*/
@@ -25,7 +25,7 @@ html {
   font-family: 'serif', 'sans-serif';
   background-color: #FBFBFB;
   color: #444;
-  background-image: url(grid.png);
+  /*background-image: url(grid.png);*/
 }
 
 h1{
@@ -38,10 +38,6 @@ h1{
 h2{
   font-size: 1.5; /* 27px/18px=1.5em */
   line-height: 1.222em; /* 33px/27px=1.222em */
-}
-
-.adressWrapper{
-  text-align: center;
 }
 
 ul {
@@ -58,9 +54,25 @@ ol {
   margin: 0 1em 0 1.5em;
 }
 
+video{
+  max-width: 100%;
+}
+
 footer{
   font-size: .8em;
   text-align: left;
+}
+
+#navigation a.menuButton{
+  display: none;
+}
+
+.mButton {
+  text-align: center;
+}
+
+.adressWrapper{
+  text-align: center;
 }
 
 .wrapper {
@@ -92,9 +104,7 @@ footer{
     "ft";
 }
 
-video{
-  max-width: 100%;
-}
+
 
 
 /*---------navigation bar-------*/
@@ -107,12 +117,13 @@ video{
 
 /* Navbar links */
 #navigation a {
-  text-align: center;
   display: flex;
   flex-grow: 1;
+  justify-content: center;
   color: #f2f2f2;
   padding: 1.222em 1.125em;
   text-decoration: none;
+  text-align: center;
 }
 
 /* change the color of links on hover */
@@ -190,14 +201,16 @@ video{
 
 
 @media (max-width: 380px) {
-  #navigation a.tohide {
+  #navigation a.menuButton{
+    display: flex;
+
+  }
+
+  #navigation a.mButton {
     display: none;
   }tohide
 
-  #navigation a.active{
-    float: right;
-    
-  }
+
 
 
 }
