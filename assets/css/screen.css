@@ -65,11 +65,11 @@ footer{
 
 
 
-.mButton {
+.mbutton {
   text-align: center;
 }
 
-.adressWrapper{
+.adress-wrapper{
   text-align: center;
 }
 
@@ -215,7 +215,7 @@ footer{
         "ft";
     }
 
-    .wrapperPic {
+    .wrapper-pic {
       grid-template-columns: 3fr 2fr ;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
@@ -228,12 +228,12 @@ footer{
 
 
 @media (max-width: 380px) {
-  #navigation a.menuButton{
+  #navigation a.menu-button{
     display: flex;
 
   }
 
-  #navigation a.mButton {
+  #navigation a.mbutton {
     display: none;
   }tohide
 
