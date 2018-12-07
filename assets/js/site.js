@@ -7,36 +7,19 @@
     return;
   }
   //being unobstrusive JavaScript Below...
-  document.addEventListener('DOMContentLoaded', function(){
-    //JavaScript that works on the DOM wil be written here
-    console.log('The DOM has loaded.');
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
 
-    //add a js class ln the <html> element...
-    document.querySelector('html').className = 'js';
-
-    var navigation = document.querySelector('#navigation');
-
-    // Build the outer heading element
-    var nav_heading = document.createElement('h2');
-    // Build the inner anchor/link element
-    var menu_link = document.createElement('a');
-    menu_link.textContent = 'Menu';
-    menu_link.setAttribute('id','menu-button');
-    menu_link.setAttribute('href','#null');
-    menu_link.setAttribute('tabindex', '1');
-    // Append the menu_link to the heading element
-    nav_heading.append(menu_link);
-
-    // Finally, append the nav_heading to #navigation
-    navigation.appendChild(nav_heading);
-
-    //Listen for clicks on #menu-button and toggle the visible class
-    var menu-button = document.querySelector('#menu-button');
-    menu_button.addEventListener('click', function(e) {
-      classList.toggle('visible');
-      e.preventDefault();
-    })
-
-  });//end addEventListener
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });//end event listener on collapsible
+  }//end for
 
 })();//end IIFE
