@@ -43,7 +43,7 @@ h2{
 ul {
   list-style: circle;
   padding: 0 0 0 1.222em;
-  text-align: center;
+  text-align: left;
   margin: 0 1em 0 1em;
 }
 
@@ -60,12 +60,10 @@ video{
 
 footer{
   font-size: .8em;
-  text-align: left;
+  text-align: center;
 }
 
-#navigation a.menuButton{
-  display: none;
-}
+
 
 .mButton {
   text-align: center;
@@ -104,6 +102,10 @@ footer{
     "ft";
 }
 
+/*====== Layout Rules =======*/
+#navigation a.hidden {
+  display: none;
+}
 
 
 
@@ -134,6 +136,36 @@ footer{
 /*---------End navigation bar code-------*/
 
 
+/*--------javascript content----------*/
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+
+
+/*Media Queries Below*/
+
 @media (min-width: 600px) {
 
   /* clearfix*/
@@ -152,11 +184,6 @@ footer{
     float: left;
     margin: 0 10px 0 0;
     width: 150px;
-  }
-
-  .wrapper .footer {
-    background-color: #eee;
-    padding: 10px;
   }
 
   .wrapper > * {
