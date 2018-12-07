@@ -6,54 +6,48 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* Begin site styles below */
 
 /*
-1em=18px
+1em= 18px
 1 lead = 22px;
 Modular scale (perfect fifth: https://www.modularscale.com/?18&px&1.5)
 */
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Base Styles */
 html {
-  font-family: Georgia, serif;
+  margin: 2.5em; /* 40px /16px */
   font-size: 1.125em; /*(text size/standard size)18px / 16px = 1.125em*/
   line-height: 1.222em; /*(ling heigh chosen/pixel size chosen) 22px / 18px=1.222em*/
-  /*background-image: url(grid.png);*/
+  font-family: 'serif', 'sans-serif';
   background-color: #FBFBFB;
-  padding: 2.444em 0 1.222em 0;  /*top_&_bottom right_&_left*/
+  color: #444;
+  background-image: url(grid.png);
 }
 
-h2,h3,h4,h5,h6,address,footer{
+h1{
   text-align: center;
-  padding: 0 1em 0 1em; /*top right bottom left */
-}
-
-h1 {
-  text-align: center;
-  padding: 0 1em 0 1em; /*top right bottom left*/
   font-size: 2.25em; /* 40.5px / 18 = 2.25em */
-  line-height: 1.0864197531em; /* 44px / 40.5 = 1.0864197531em */
-  background-color: #CCEFC9;
+  line-height: 1.0864197531em; /* 44px / 40.5= 1.0864197531em */
+  padding: 1.0864197531em 0;
 }
 
 h2{
-  font-size: 1.5em;/* 27px/18 = 1.5em*/
-  line-height: 1.222em; /* 33 / 27 = 1.222em */
-  padding: 1.222em 0 0.4074074074em 0;
+  font-size: 1.5; /* 27px/18px=1.5em */
+  line-height: 1.222em; /* 33px/27px=1.222em */
 }
 
-p{
-  text-indent: 1em;
-  padding: 0em 1em 0 1em; /* top right bottom left*/
+.adressWrapper{
+  text-align: center;
 }
-
-p.intro, address>p, p.arguments{
-  text-indent: 0em;
-  padding: 0 1em 0 1em;
-}
-
 
 ul {
   list-style: circle;
   padding: 0 0 0 1.222em;
-  text-align: left;
+  text-align: center;
   margin: 0 1em 0 1em;
 }
 
@@ -64,86 +58,146 @@ ol {
   margin: 0 1em 0 1.5em;
 }
 
-figure {
-     position: relative;
-}
-
-figure img {
-    display: block;
-}
-
-figcaption {
-    background: rgba(0, 0, 0, 0.5);
-    color: #FFF;
-    position: absolute;
-    padding: 0 1em 0 1em;
-}
-
-
-
-
-/*---------navigation bar-------*/
-
-body {margin:0}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-nav li {
-    float: left;
-}
-
-nav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 0.625em 1em; /*top_&_bottom right_&_left*/
-    text-decoration: none;
-}
-
-nav li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #4CAF50;
-}
-
-/*---------End navigation bar code-------*/
-
 footer{
   font-size: .8em;
-  padding: 1.533em 0 0 0; /*figured out this padding via trial and error, better way?*/
+  text-align: left;
 }
 
-/*responsive media styles */
-/*center videos and set base videos to 50% of original*/
-/*aspect ratio of all videos is 640*484*/
-
-
-.video{
-  padding: 0 1em 0 1em;
-  display: flex;
-  justify-content: center;
+.wrapper {
+  margin-bottom: 2em;
+  border: 2px solid #444;
+  padding: 10px;
 }
 
-audio,video{
-  display: block;
+.wrapper > .title {
+  grid-area: title;
+  font-weight: bold;
+}
+.wrapper > .img {
+  grid-area: img;
+}
+.wrapper > .content {
+   grid-area: bd;
+ }
+.wrapper > .footer {
+  grid-area: ft;
+}
+.wrapper {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-areas:
+    "title"
+    "img"
+    "bd"
+    "ft";
+}
+
+video{
   max-width: 100%;
 }
 
-/* if the browser is 600 px or smaller then execute*/
-@media screen and (min-width: 550px) {
-   html{
-     font-size: 1.688em;
-     line-height: 44px;
-   }
+
+/*---------navigation bar-------*/
+#navigation {
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar links */
+#navigation a {
+  text-align: center;
+  display: flex;
+  flex-grow: 1;
+  color: #f2f2f2;
+  padding: 1.222em 1.125em;
+  text-decoration: none;
+}
+
+/* change the color of links on hover */
+#navigation a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/*---------End navigation bar code-------*/
+
+
+@media (min-width: 600px) {
+
+  /* clearfix*/
+  .wrapper:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .wrapper > .wrapper {
+    margin-left: 160px;
+    clear: both;
+  }
+
+  .wrapper .img {
+    float: left;
+    margin: 0 10px 0 0;
+    width: 150px;
+  }
+
+  .wrapper .footer {
+    background-color: #eee;
+    padding: 10px;
+  }
+
+  .wrapper > * {
+    margin: 0 0 0 160px;
+  }
+
+
+  @supports(display: grid ) {
+    /* override */
+    .wrapper > *,
+    .wrapper.wrapper-flip > * {
+      margin: 0;
+    }
+    .wrapper .img {
+      width: auto;
+      margin: 0;
+    }
+    .wrapper:after {
+      content: none;
+    }
+
+    .wrapper {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-column-gap: 2em;
+      grid-template-areas:
+        "title"
+        "bd"
+        "ft";
+    }
+
+    .wrapperPic {
+      grid-template-columns: 3fr 2fr ;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "title img"
+        "bd img"
+        "ft ft";
+    }
+  }/*End media querie*/
+}/*End outer media querie*/
+
+
+@media (max-width: 380px) {
+  #navigation a.tohide {
+    display: none;
+  }tohide
+
+  #navigation a.active{
+    float: right;
+    
+  }
+
+
 }
